@@ -1,0 +1,19 @@
+<ul >
+  {{#events}}
+    <li  class="card" style="width: 18rem;">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Likes: {{ likes }}
+        <form  method="POST" action="/event/like">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="submit" class="btn btn-success" value="Like">
+        </form>
+        <form method="POST" action="/event/unlike">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="submit" class="btn btn-danger" value="UN-Like">
+        </form>
+        </p>
+    </li>
+  {{/events}}
+</ul>
